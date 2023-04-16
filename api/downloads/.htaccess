@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Graphictoria Authentication Required"
+AuthUserFile /var/www/api/downloads/.htpasswd
+Require valid-user

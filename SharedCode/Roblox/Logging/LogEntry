@@ -1,0 +1,22 @@
+<?php
+
+// This file defines the LogEntry class.
+
+//namespace Roblox\Logging\Gatherer;
+
+class LogEntry {
+	// Shard types
+	private $shardClient = "Client";
+	private $shardServer = "Server";
+	
+	public $shard;
+	public $entry;
+	
+	// Constructor
+	function __construct($shard, $entry) {
+		$this->shard = $shard;
+		$this->entry = $entry;
+	}
+}
+
+// EOF

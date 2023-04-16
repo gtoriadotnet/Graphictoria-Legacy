@@ -1,0 +1,56 @@
+/* Graphictoria IDE CSS */
+
+.gameCard {
+	display: inline-block;
+	padding: 11px;
+}
+
+.gameCardCol {
+	display: flex;
+	flex-direction: column;
+	margin-top: -10px;
+}
+
+@media(max-width: 991px)
+{
+	.gameCard {
+		margin: auto;
+		text-align:center;
+	}
+	
+	.gameCardCol>h4 {
+		text-align: center;
+		font-weight: bold;
+	}
+	
+	.gameCardCol>div {
+		display: flex;
+		flex-flow: wrap;
+		margin: auto;
+		text-align:center;
+	}
+}
+
+.gameCard p {
+	margin-top: 5px;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+.gameCard:hover {
+	cursor: pointer;
+	padding: 10px;
+	border-style: solid;
+	border-color: #e7e7e7;
+	border: 1px solid #e7e7e7;
+	background-color: #ffffff;
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+.fileLink {
+	text-overflow: ellipsis;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+}

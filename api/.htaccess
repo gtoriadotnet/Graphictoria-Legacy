@@ -1,0 +1,6 @@
+ErrorDocument 404 "Access Denied"
+ErrorDocument 403 "Access Denied"
+ErrorDocument 401 "Access Denied"
+
+RewriteEngine on
+RewriteRule ^game/join/?$ /game/test.php [NC,L]

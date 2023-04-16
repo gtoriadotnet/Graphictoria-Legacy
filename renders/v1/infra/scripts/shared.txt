@@ -1,0 +1,7 @@
+settings()["Task Scheduler"].ThreadPoolConfig = Enum.ThreadPoolConfig.PerCore4;
+game:GetService("ContentProvider"):SetThreadPool(16)
+game:GetService("Stats"):SetReportUrl("http://api.gtoria.net/reportstat?cock=1")
+
+local Lighting = game:GetService("Lighting")
+Lighting.ClockTime = 13
+Lighting.GeographicLatitude = -5

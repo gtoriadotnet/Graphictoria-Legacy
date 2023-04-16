@@ -1,0 +1,50 @@
+local UserId = %ITEMID%
+local Pose = %POSE%
+local HasGear = %HASGEAR%
+
+local Player = game:GetService("Players"):CreateLocalPlayer(0)
+Player.CharacterAppearance = "http://api.gtoria.net/user/getCharacter.php?key=D869593BF742A42F79915993EF1DB&mode=ch&sid=1&uid=" .. UserId
+Player:LoadCharacter(false)
+
+local Character = Player.Character
+
+-- Walking
+if Pose == 1 then
+	local walk = math.sin(.73*9)
+	Character.Torso['Left Shoulder'].C0=CFrame.new(-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Character.Torso['Left Shoulder'].C1=CFrame.new(0.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)*CFrame.Angles(0,0,walk)
+	Character.Torso['Right Shoulder'].C0=CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	Character.Torso['Right Shoulder'].C1=CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)*CFrame.Angles(0,0,walk)
+	Character.Torso['Left Hip'].C0=CFrame.new(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Character.Torso['Left Hip'].C1=CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)*CFrame.Angles(0,0,-walk)
+	Character.Torso['Right Hip'].C0=CFrame.new(0, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Character.Torso['Right Hip'].C1=CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)*CFrame.Angles(0,0,walk)
+
+-- Sitting
+elseif Pose == 2 then
+	Character.Torso['Left Shoulder'].C0=CFrame.new(-1, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Character.Torso['Left Shoulder'].C1=CFrame.new(0.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)*CFrame.Angles(0,0,math.pi/2)
+	Character.Torso['Right Shoulder'].C0=CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	Character.Torso['Right Shoulder'].C1=CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)*CFrame.Angles(0,0,-math.pi/2)
+	Character.Torso['Left Hip'].C0=CFrame.new(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Character.Torso['Left Hip'].C1=CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)*CFrame.Angles(0,0,math.pi/2)
+	Character.Torso['Right Hip'].C0=CFrame.new(0, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Character.Torso['Right Hip'].C1=CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)*CFrame.Angles(0,0,math.pi/2)
+
+-- Overlord	
+elseif Pose == 3 then
+	Character.Torso['Left Shoulder'].C0=CFrame.new(-1, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+	Character.Torso['Left Shoulder'].C1=CFrame.new(0.49999997, 0.49999997, 4.47034836e-08, 0.163175777, -0.229498923, -0.959533036, -0.33284384, 0.90274477, -0.272519022, 0.928756475, 0.363843203, 0.0709187835)
+	Character.Torso['Right Shoulder'].C0=CFrame.new(1, 0.5, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+	Character.Torso['Right Shoulder'].C1=CFrame.new(-0.5, 0.5, 0, 0.163175479, 0.229498848, 0.959533155, 0.332843512, 0.902745068, -0.272518843, -0.928756654, 0.363842756, 0.0709186569)
+
+end
+
+-- Hack to stick the arm out
+if HasGear then
+	Character.Torso['Right Shoulder'].C0=CFrame.new(1, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+	Character.Torso['Right Shoulder'].C1=CFrame.new(-0.5, 0.5, 0, 0, 0, 1, 0, 1, -0, -1, 0, 0)*CFrame.Angles(0,0,-3.14/2)
+end
+
+--                                                 format,  width,  height,  sky,   crop
+return game:GetService("ThumbnailGenerator"):Click("PNG",   840,    840,     true,  false)

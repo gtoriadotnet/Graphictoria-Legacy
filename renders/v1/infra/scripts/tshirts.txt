@@ -1,0 +1,16 @@
+local ItemId = %ITEMID%
+
+local Player = game:GetService("Players"):CreateLocalPlayer(0)
+Player.CharacterAppearance = "http://api.gtoria.net/user/getCharacter.php?uid=1&mode=ts&key=D869593BF742A42F79915993EF1DB&sid=" .. ItemId .. "&tick=" .. tick()
+Player:LoadCharacter(false)
+
+local Character = Player.Character
+
+for _, Part in pairs(Character:GetDescendants())do
+	if Part:IsA("BasePart") then
+		Part.BrickColor = BrickColor.new("White")
+	end
+end
+
+--                                                 format,  width,  height,  sky,   crop
+return game:GetService("ThumbnailGenerator"):Click("PNG",   840,    840,     true,  false)

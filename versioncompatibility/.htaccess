@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^GetAllowedMD5Hashes/?$ /allowedmd5hash.php [NC,L]
+RewriteRule ^GetAllowedSecurityVersions/?$ /allowedsecver.php [NC,L]
+ErrorDocument 404 /index.php

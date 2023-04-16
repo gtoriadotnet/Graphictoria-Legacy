@@ -1,0 +1,7 @@
+local ItemId = %ITEMID%
+
+local Accoutrement = game:GetObjects("http://gtoria.net/asset/?id=" .. ItemId)[1]
+Accoutrement.Parent = workspace
+
+--                                                 format,  width,  height,  sky,   crop
+return game:GetService("ThumbnailGenerator"):Click("PNG",   840,    840,     true,  true)

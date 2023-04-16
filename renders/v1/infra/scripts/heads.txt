@@ -1,0 +1,25 @@
+local ItemId = %ITEMID%
+
+local Head = Instance.new("Part")
+Head.Size = Vector3.new(2, 1, 1)
+Head.formFactor = "Symmetric"
+Head.BottomSurface = "Smooth"
+Head.TopSurface = "Smooth"
+
+local Face = Instance.new("Decal")
+Face.Texture = "rbxasset://textures//face.png"
+Face.Face = "Front"
+
+Face.Parent = Head
+Head.Parent = workspace
+
+game:Load("http://gtoria.net/asset/?id=" .. ItemId)
+
+for _, Object in pairs(game:GetChildren())do
+	if Object:IsA("DataModelMesh") then
+		Object.Parent = Head
+	end
+end
+
+--                                                 format,  width,  height,  sky,   crop
+return game:GetService("ThumbnailGenerator"):Click("PNG",   840,    840,     true,  false)

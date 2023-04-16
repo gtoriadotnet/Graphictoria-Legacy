@@ -1,0 +1,1 @@
+%LruJmR3gQMo2oR+P7iDUdXBKjEVAKmCzZ8Hdk1ew8/fZGKyz9JMfk6DwuJgUdn10FJfpqXm3k0OEKv+ndf18QIVNZnR39guPB1B+2x0g0SR7sRJgZbtn4lDXJNk/rDDPgQmDZcLMpW24pJpsQIbDzmN63U6ihYlPWuDlU3r5Mzs=%game:GetService("RunService"):Run() local player = game.Players:CreateLocalPlayer(0) player:LoadCharacter() player.Character.Humanoid.Died:connect(function() wait(5) player:LoadCharacter() end)

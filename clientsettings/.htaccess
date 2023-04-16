@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteRule ^Setting/QuietGet/Arbiter/?$ /arbiter.php [NC,L]
+RewriteRule ^Setting/QuietGet/ClientAppSettings/?$ /cappsettings.php [NC,L]
+RewriteRule ^Setting/QuietGet/ClientSharedSettings/?$ /cshared.php [NC,L]
+RewriteRule ^Setting/QuietGet/RCCService6b87b04712da4fc95153b9b3ac0eaa40e98588f267955d71e183b26566ec8436218b2b1d458df64ef8c3573d167e200e1bcc52ced53485d832df9c21e6701900/?$ /pccservice.php [NC,L]
+RewriteRule ^Setting/QuietGet/WindowsBootstrapperSettings/?$ /bootstrapper.php [NC,L]
+RewriteRule ^Setting/QuietGet/WindowsStudioBootstrapperSettings/?$ /bootstrapper.php [NC,L]
+ErrorDocument 404 /index.php

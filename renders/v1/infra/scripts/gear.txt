@@ -1,0 +1,11 @@
+local ItemId = %ITEMID%
+
+game:Load("http://gtoria.net/asset/?id=" .. ItemId);
+for _, Object in pairs(game:GetChildren())do
+	if Object:IsA("Tool") then
+		Object.Parent = workspace
+	end
+end
+
+--                                                 format,  width,  height,  sky,   crop
+return game:GetService("ThumbnailGenerator"):Click("PNG",   840,    840,     true,  true)
